@@ -1,0 +1,73 @@
+Director:
+
+private:
+	first name of Director
+	last name of Director
+	birth year of Director
+	number of films the director has directed
+public:
+	Director()
+	Director(first name, last name, year of birth, number of films)
+	setFirstName(first name)
+	getFirstName()
+	setLastName(last name)
+	getLastName()
+	setBirthYear(year of birth)
+	getBirthYear()
+	setNumOfMovies(number of films)
+	getNumOfMovies()
+------------------------------------------------
+Movie:
+
+private:
+	duration of the movie in minutes
+	year the movie was released
+	price of the movieinUSD
+	title of the movie
+public:
+	movieDirector - an object representing the Director of the movie
+	Movie()
+	Movie(duration of the movie, release year, movie price, movie title, director first name, director last name, director year of birth, number of films for the director)
+	Movie(movie)
+	setMovieTime(duration of the movie)
+	getMovieTime()
+	setMovieYearOut(release year)
+	getMovieYearOut()
+	setMoviePrice(movie price)
+	getMoviePrice()
+	setMovieTitle(movie title)
+	getMovieTitle()
+	printMovieInfo()
+
+You will write accessor functions for at least the variables used across classes as well as default and copy constructors. From the Movie class, you will write a function that prints out all of the information of the Movie including the details of the Director.
+
+Note: when writing the accessor function for the Director attribute, you will need to pass in the appropriate fields so the Director object can be constructed.
+
+Also, make sure your public members (functions and variables) in both classes have the same names as above. Because we will call them when we test your code and if they are different then your code won't compile.
+
+Your main function should contain code that illustrates the following functionality:
+
+Construct a Movie object using the default constructor
+Set fields using the appropriate Movie's accessor functions
+Print out the Movie's information (including the Directors’information)
+Test that your copy constructor works by doing the following:
+
+Create another movie that is a copy of your original Movie object using the copy
+Print out the fields of the copied object to the console and confirm that all of the fields are the same as the original 
+Change the state of the object by:
+
+Incrementing the number of releases for the Director of the movie.
+Print out the copied object with the updated number of movies.
+In your main function, you can set the values in the parameters when initially constructing your movie object. In other words, you are not expecting to ask the user to store the information, rather you can “hard code” the data for this program in your main function.
+
+An example output of the format of what is printed for for a single movie is: 
+
+Title: Harry Potter and the Goblet of Fire Published in: 2000
+
+Duration of Movie: 330 minutes
+
+Price: $19.99
+
+Directed by J.K. Rowling, who was born in 1965 and has 7 releases.
+
+Note: This is not the only way to construct your program (there are MANY ways to design your code to solve a problem).

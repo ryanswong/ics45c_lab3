@@ -1,0 +1,3 @@
+﻿  Movies.cpp
+C:\Users\suzur\projects\ICS 45C\Lab3\Movies.cpp(50,11): warning C4101: 'temp': unreferenced local variable
+  Lab3_vs.vcxproj -> C:\Users\suzur\projects\ICS 45C\Lab3\Debug\Lab3_vs.exe

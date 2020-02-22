@@ -1,0 +1,3 @@
+﻿  Movie.cpp
+C:\Users\suzur\projects\ICS 45C\Lab2\Movie.cpp(54,38): warning C4244: 'return': conversion from 'float' to 'int', possible loss of data
+  Lab2_vs.vcxproj -> C:\Users\suzur\projects\ICS 45C\Lab2\Debug\Lab2_vs.exe
