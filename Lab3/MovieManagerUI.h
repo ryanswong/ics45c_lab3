@@ -5,6 +5,15 @@
 
 class MovieManagerUI {
 
+public:
+	static void printMenu();
+	static string getCommand();
+
+	static void getMovieInfo();
+	static void getMovieCode();
+	static void getRenterInfo();
+	static void getRenterId();
+
 };
 
 

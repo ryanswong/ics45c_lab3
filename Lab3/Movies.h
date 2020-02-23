@@ -17,19 +17,22 @@ public:
 	Movie();
 	Movie(string movie_code, string movie_name, int num_copies);
 
-	void	rentMovie(Renter &r);
-	void	returnRental(int renterId);
+	void	rentMovie(Renter);
+	void	returnRental(int);
 
-	void	setMovieCode(string movie_code);
+	void	setMovieCode(string);
 	string	getMovieCode();
 
-	void	setMovieName(string movie_name);
+	void	setMovieName(string);
 	string	getMovieName();
 
-	void	setNumCopies(int num_copies);
+	void	setNumCopies(int);
 	int		getNumCopies();
 
 	void show_array();
+
+	friend ostream& operator<<(ostream& os, Movie&);
+
 };
 
 #endif

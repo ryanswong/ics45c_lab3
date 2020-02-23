@@ -1,6 +1,5 @@
 #include "Movies.h"
 
-#include <algorithm>
 
 // default constructor
 Movie::Movie() {
@@ -17,7 +16,7 @@ Movie::Movie(string movie_code, string movie_name, int num_copies) {
 }
 
 // adds renter to the renters array
-void Movie::rentMovie(Renter &r) {
+void Movie::rentMovie(Renter r) {
 
 	// error checks
 	if (r.getRenterId() < 0)
@@ -75,17 +74,32 @@ void Movie::rentMovie(Renter &r) {
 // removes renter from the renters array
 void Movie::returnRental(int renterId) {
 
-	for (int i = 0; i < sizeof(renters); i++) {
-		//renter = renters[i]
+	if (renterId < 0)
+		throw InvalidRenterIDException();
+
+
+	bool renter_found = false;
+	bool empty_renters_array = true;
+	for (int i = 0; i < 10; i++) {
+
+		if (renters[i].getRenterId() > 0)
+			empty_renters_array = false;
 
 		if (renters[i].getRenterId() == renterId) {
+			renter_found = true;
+			for (int j = i; j < 9; j++) {
+				renters[j] = renters[j + 1];
+			}
 			Renter default_renter;
-			renters[i] = default_renter;
+			renters[9] = default_renter;
+			break;
 		}
 	}
 
-
-
+	if (empty_renters_array)
+		throw EmptyRenterListException();
+	if (renter_found == false)
+		throw RenterNotFoundException();
 
 }
 
@@ -106,5 +120,26 @@ void Movie::show_array() {
 		<< " ln: " << renters[i].getRenterLn()
 		<< " size: " << sizeof(renters[i]) << endl;
 	}
+}
+
+
+ostream& operator<<(ostream& os, Movie& m) {
+	string movie_info = "";
+	string renter_info = "";
+	for (int i = 0; i < 10; i++) {
+		if (m.renters[i].getRenterId() > 1) {
+			renter_info += to_string(m.renters[i].getRenterId()) + " ";
+			renter_info += m.renters[i].getRenterFn() + " ";
+			renter_info += m.renters[i].getRenterLn() + "\n";
+		}
+	} 
+	movie_info +=
+		"Movie Code: " + m.getMovieCode() +
+		"\nMovie Name: " + m.getMovieName() +
+		"\nNumber of Copies: " + to_string(m.getNumCopies()) +
+		"\nRenters: \n" + renter_info;
+
+		os << movie_info;
+		return os;
 }
 
